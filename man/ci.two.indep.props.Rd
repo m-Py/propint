@@ -52,6 +52,11 @@ does not contain 0. See Newcombe (Method 10, 1998).
 ci.two.indep.props(ci=95, a=56, m=70, b=48, n=80)
 ci.two.indep.props(ci=95, a=9,  m=10, b=3,  n=10)
 
+# Alternative usage:
+p1 <- ci.one.prop(95, 56, 70)
+p2 <- ci.one.prop(95, 48, 80)
+ci.two.indep.props(p1=p1$p, p2=p2$p, l1=p1$l, l2=p2$l, u1=p1$u, u2=p2$u)
+
 }
 \author{
 Martin Papenberg \email{martin.papenberg@hhu.de}

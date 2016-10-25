@@ -1,4 +1,4 @@
-#' On the difference of differences: computing interactions of proportions.
+#' The difference of differences - computing interactions of proportions.
 #'
 #' \tabular{ll}{
 #' Package: \tab propint\cr

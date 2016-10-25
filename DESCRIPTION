@@ -1,6 +1,6 @@
 Package: propint
 Type: Package
-Title: On the difference of differences: computing interactions of
+Title: The difference of differences - computing interactions of
     proportions
 Author: Martin Papenberg <martin.papenberg@hhu.de>
 Maintainer: Martin Papenberg <martin.papenberg@hhu.de>
