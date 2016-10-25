@@ -10,11 +10,21 @@
 #' 
 #'
 #' @param ci What confidence interval - give as a natural number (e.g. 95 for the
-#'     95\% confidence interval)
+#'     95\% confidence interval).  Only pass this argument when passing absolute
+#'     frequencies (a, m , b, n); do not combine with proportions and confidence
+#'     intervall boundaries.
 #' @param a Frequency of events in proportion A
 #' @param m Total frequency in proportion A
 #' @param b Frequency of events in proportion B
 #' @param n Total frequency in proportion B
+#' @param p1 Proportion 1; pass only if absolute frequencies (a, m , b, n) are not
+#'     given
+#' @param l1 The lower bound of the confidence interval of p1.
+#' @param u1 The lower bound of the confidence interval of p1.
+#' @param p2 Proportion 2; pass only if absolute frequencies (a, m , b, n) are not
+#'     given
+#' @param l2 The lower bound of the confidence interval of p2.
+#' @param u2 The lower bound of the confidence interval of p2.
 #'
 #' @return A \code{list} containing the confidence interval boudaries
 #'   \item{d}{The difference between the proportions (a/m) - (b/n)}
