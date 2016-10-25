@@ -16,7 +16,7 @@ confidence interval.
 
 ```
 library("devtools") # if not available: install.packages("devtools")
-install_github("m-Py/minDiff")
+install_github("m-Py/propint")
 
 # load the package via 
 library("propint")
