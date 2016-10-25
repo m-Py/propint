@@ -64,7 +64,8 @@ and the lower (-0.169) and the upper bound (0.234) for the confidence interval o
 this difference. In this case we do not find evidence for an interaction effect,
 because the interval contains 0.
 
-An alternative usage would be to compute confidence intervals for single proportions first, and the call `ci.indep.interaction()`:
+An alternative usage is to compute confidence intervals for the single proportions
+first, and then call `ci.indep.interaction()`:
 
 ```
 
