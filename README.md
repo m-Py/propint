@@ -60,8 +60,8 @@ $u
 
 ```
 
-We obtain the difference between the differences $(p1 - p2)$ and $(p3 - p4) = 0.031$
-and the lower ($-0.169$) and the upper bound ($0.234$) for the confidence interval of
+We obtain the difference between the differences (p1 - p2) and (p3 - p4) = 0.031
+and the lower (-0.169) and the upper bound (0.234) for the confidence interval of
 this difference. In this case we do not find evidence for an interaction effect,
 because the interval contains 0.
 
