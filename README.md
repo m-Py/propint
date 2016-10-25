@@ -1,9 +1,8 @@
 # propint
 
 propint is an R package that implements a method for statistical inference for
-proportions by offering a confidence interval for the difference between differences
-of proportions, i.e. the interaction of proportion. The method that is used was
-developed by Newcombe (2001).
+proportions: to test for the difference of differences in proportions, i.e. the
+interaction of proportions. The method that is used was developed by Newcombe (2001).
 
 The method relies on confidence intervals for single proportions that are converted
 to a confidence interval for the difference between differences of proportions. By
