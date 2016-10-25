@@ -8,8 +8,9 @@
 #' outcomes are dichotomous rather than continuous. See Newcombe (2001).
 #' 
 #' @param ci What confidence interval - give as a natural number (e.g. 95 for the
-#'     95\% confidence interval). Only pass this argument when passing absolute frequencies
-#'     (a, m , b, n); do not combine with proportions and confidence intervall boundaries.
+#'     95\% confidence interval). Only pass this argument when passing absolute
+#'     frequencies (a, m , b, n); do not combine with proportions and confidence
+#'     interval boundaries.
 #' @param a1 Frequency of events in proportion A1
 #' @param m1 Total frequency in proportion A1
 #' @param b1 Frequency of events in proportion B1
@@ -18,22 +19,22 @@
 #' @param m2 Total frequency in proportion A2
 #' @param b2 Frequency of events in proportion B2
 #' @param n2 Total frequency in proportion B2
-#' @param p1 Proportion 1; pass only if absolute frequencies (a, m , b, n) are not
-#'     given
+#' @param p1 Proportion 1 - a value between 0 and 1. Pass only if absolute
+#'     frequencies (a, m , b, n) are not given.
 #' @param l1 The lower bound of the confidence interval of p1.
-#' @param u1 The lower bound of the confidence interval of p1.
-#' @param p2 Proportion 2; pass only if absolute frequencies (a, m , b, n) are not
-#'     given
+#' @param u1 The upper bound of the confidence interval of p1.
+#' @param p2 Proportion 2 - a value between 0 and 1. Pass only if absolute
+#'     frequencies (a, m , b, n) are not given.
 #' @param l2 The lower bound of the confidence interval of p2.
-#' @param u2 The lower bound of the confidence interval of p2.
-#' @param p3 Proportion 3; pass only if absolute frequencies (a, m , b, n) are not
-#'     given
+#' @param u2 The upper bound of the confidence interval of p2.
+#' @param p3 Proportion 3 - a value between 0 and 1. Pass only if absolute
+#'     frequencies (a, m , b, n) are not given.
 #' @param l3 The lower bound of the confidence interval of p3.
-#' @param u3 The lower bound of the confidence interval of p3.
-#' @param p4 Proportion 4; pass only if absolute frequencies (a, m , b, n) are not
-#'     given
+#' @param u3 The upper bound of the confidence interval of p3.
+#' @param p4 Proportion 4 - a value between 0 and 1. Pass only if absolute
+#'     frequencies (a, m , b, n) are not given.
 #' @param l4 The lower bound of the confidence interval of p4.
-#' @param u4 The lower bound of the confidence interval of p4.
+#' @param u4 The upper bound of the confidence interval of p4.
 #' 
 #' @return A \code{list} containing the confidence interval boudaries.
 #'   \item{d}{The difference between differences ((a1/m1 - b1/n1) - (a2/m2 - b2/n2) = (p1 - p2) - (p3 - p4)}

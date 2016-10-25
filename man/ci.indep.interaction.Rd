@@ -11,8 +11,9 @@ ci.indep.interaction(ci = NULL, a1 = NULL, m1 = NULL, b1 = NULL,
 }
 \arguments{
 \item{ci}{What confidence interval - give as a natural number (e.g. 95 for the
-95\% confidence interval). Only pass this argument when passing absolute frequencies
-(a, m , b, n); do not combine with proportions and confidence intervall boundaries.}
+95\% confidence interval). Only pass this argument when passing absolute
+frequencies (a, m , b, n); do not combine with proportions and confidence
+interval boundaries.}
 
 \item{a1}{Frequency of events in proportion A1}
 
@@ -30,33 +31,33 @@ ci.indep.interaction(ci = NULL, a1 = NULL, m1 = NULL, b1 = NULL,
 
 \item{n2}{Total frequency in proportion B2}
 
-\item{p1}{Proportion 1; pass only if absolute frequencies (a, m , b, n) are not
-given}
+\item{p1}{Proportion 1 - a value between 0 and 1. Pass only if absolute
+frequencies (a, m , b, n) are not given.}
 
 \item{l1}{The lower bound of the confidence interval of p1.}
 
-\item{u1}{The lower bound of the confidence interval of p1.}
+\item{u1}{The upper bound of the confidence interval of p1.}
 
-\item{p2}{Proportion 2; pass only if absolute frequencies (a, m , b, n) are not
-given}
+\item{p2}{Proportion 2 - a value between 0 and 1. Pass only if absolute
+frequencies (a, m , b, n) are not given.}
 
 \item{l2}{The lower bound of the confidence interval of p2.}
 
-\item{u2}{The lower bound of the confidence interval of p2.}
+\item{u2}{The upper bound of the confidence interval of p2.}
 
-\item{p3}{Proportion 3; pass only if absolute frequencies (a, m , b, n) are not
-given}
+\item{p3}{Proportion 3 - a value between 0 and 1. Pass only if absolute
+frequencies (a, m , b, n) are not given.}
 
 \item{l3}{The lower bound of the confidence interval of p3.}
 
-\item{u3}{The lower bound of the confidence interval of p3.}
+\item{u3}{The upper bound of the confidence interval of p3.}
 
-\item{p4}{Proportion 4; pass only if absolute frequencies (a, m , b, n) are not
-given}
+\item{p4}{Proportion 4 - a value between 0 and 1. Pass only if absolute
+frequencies (a, m , b, n) are not given.}
 
 \item{l4}{The lower bound of the confidence interval of p4.}
 
-\item{u4}{The lower bound of the confidence interval of p4.}
+\item{u4}{The upper bound of the confidence interval of p4.}
 }
 \value{
 A \code{list} containing the confidence interval boudaries.

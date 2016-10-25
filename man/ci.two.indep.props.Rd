@@ -11,7 +11,7 @@ ci.two.indep.props(ci = NULL, a = NULL, m = NULL, b = NULL, n = NULL,
 \item{ci}{What confidence interval - give as a natural number (e.g. 95 for the
 95\% confidence interval).  Only pass this argument when passing absolute
 frequencies (a, m , b, n); do not combine with proportions and confidence
-intervall boundaries.}
+interval boundaries.}
 
 \item{a}{Frequency of events in proportion A}
 
@@ -21,19 +21,19 @@ intervall boundaries.}
 
 \item{n}{Total frequency in proportion B}
 
-\item{p1}{Proportion 1; pass only if absolute frequencies (a, m , b, n) are not
-given}
+\item{p1}{Proportion 1 - a value between 0 and 1. Pass only if absolute
+frequencies (a, m , b, n) are not given.}
 
 \item{l1}{The lower bound of the confidence interval of p1.}
 
-\item{u1}{The lower bound of the confidence interval of p1.}
+\item{u1}{The upper bound of the confidence interval of p1.}
 
-\item{p2}{Proportion 2; pass only if absolute frequencies (a, m , b, n) are not
-given}
+\item{p2}{Proportion 2 - a value between 0 and 1. Pass only if absolute
+frequencies (a, m , b, n) are not given.}
 
 \item{l2}{The lower bound of the confidence interval of p2.}
 
-\item{u2}{The lower bound of the confidence interval of p2.}
+\item{u2}{The upper bound of the confidence interval of p2.}
 }
 \value{
 A \code{list} containing the confidence interval boudaries
