@@ -1,4 +1,4 @@
-#' Interactions in proportions.
+#' On the difference of differences: computing interactions of proportions.
 #'
 #' \tabular{ll}{
 #' Package: \tab propint\cr
@@ -9,14 +9,15 @@
 #' Encoding: \tab UTF-8\cr
 #' License: \tab GPL (>= 3)\cr
 #' LazyLoad: \tab yes\cr
+#' URL: \tab https://github.com/m-Py/propint\cr
 #' }
 #'
-#' Compute confidence intervals for interactions in proportions
+#' Computes the confidence interval for interactions in proportions
 #'
 #' @aliases propint-package
 #' @name propint-package
 #' @docType package
 #' @title The propint Package
-#' @author Martin Papenberg
+#' @author Martin Papenberg <martin.papenberg@hhu.de>
 #' @keywords package
 NULL

@@ -5,7 +5,7 @@
 \alias{propint-package}
 \title{The propint Package}
 \description{
-Interactions in proportions.
+On the difference of differences: computing interactions of proportions.
 }
 \details{
 \tabular{ll}{
@@ -17,12 +17,13 @@ Depends: \tab R (>= 2.10.0)\cr
 Encoding: \tab UTF-8\cr
 License: \tab GPL (>= 3)\cr
 LazyLoad: \tab yes\cr
+URL: \tab https://github.com/m-Py/propint\cr
 }
 
-Compute confidence intervals for interactions in proportions
+Computes the confidence interval for interactions in proportions
 }
 \author{
-Martin Papenberg
+Martin Papenberg <martin.papenberg@hhu.de>
 }
 \keyword{package}
 
