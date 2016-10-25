@@ -1,0 +1,17 @@
+Package: propint
+Type: Package
+Title: Interactions in proportions
+Author: Martin Papenberg <martin.papenberg@hhu.de>
+Maintainer: Martin Papenberg <martin.papenberg@hhu.de>
+Depends:
+    R (>= 2.10.0)
+Description: Compute confidence intervals for interactions in
+    proportions
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyLoad: yes
+Authors@R: c(person(given="Martin", family="Papenberg",
+        email="martin.papenberg@hhu.de", role=c("aut", "cre")))
+Version: 0.01-1
+Date: 2016-10-25
+RoxygenNote: 5.0.1
