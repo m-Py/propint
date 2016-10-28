@@ -67,7 +67,7 @@ $u
 
 ```
 
-We obtain the difference between the differences d = (p1 - p2) and (p3 - p4) = 0.031
+We obtain the difference between the differences d = (p1 - p2) - (p3 - p4) = 0.031
 and the lower bound (l = -0.169) and the upper bound (u = 0.234) for the 95%
 confidence interval of this difference. Because the interval contains 0, there is no
 evidence for an interaction.
