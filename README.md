@@ -25,7 +25,8 @@ library("propint")
 
 The function `ci.indep.interaction()` computes the confidence interval for an
 interaction of independent proportions. Specifically, the differences of the
-difference of two respective proportions is compared, i.e. (p1 - p2) - (p3 - p4).
+difference of two respective proportions is compared, i.e. the contrast (p1 - p2) -
+(p3 - p4).
 
 `ci.indep.interaction()` can be used in two different ways:
 
@@ -67,9 +68,9 @@ $u
 ```
 
 We obtain the difference between the differences d = (p1 - p2) and (p3 - p4) = 0.031
-and the lower bound (l = -0.169) and the upper bound (u = 0.234) for the confidence
-interval of this difference. Because the interval contains 0, there is no evidence
-for an interaction.
+and the lower bound (l = -0.169) and the upper bound (u = 0.234) for the 95%
+confidence interval of this difference. Because the interval contains 0, there is no
+evidence for an interaction.
 
 An alternative usage of `ci.indep.interaction()` (usage 2) is to compute confidence
 intervals for each proportion first, and then call `ci.indep.interaction()`:
@@ -100,14 +101,15 @@ $u
 ```
 
 As the code shows, it is possible to pass the lower and upper bounds of the four
-confidence intervals and the proportions directly to `ci.indep.interaction()`. In
-this case, `ci.one.prop()` is used to determine the boundaries of the 95% confidence
-interval. `ci.one.prop()` is also part of the `propint` package and is used as the
-default computation of confidence intervals of single proportions (see Newcombe,
-1998a). Consequently, you can pass confidence intervals to `ci.indep.interaction()`
-that you computed using some other method. Also note that we do not pass the
-confidence level in this case; `ci.indep.interaction()` computes the same confidence
-level that is implied in the lower and upper boundaries of the four proportions.
+confidence intervals and the proportions directly to `ci.indep.interaction()`. In the
+illustrated case above, `ci.one.prop()` is used to determine the boundaries of the
+95% confidence interval. `ci.one.prop()` is also part of the `propint` package and is
+used as the default computation of confidence intervals of single proportions (see
+Newcombe, 1998a). Consequently, you can pass confidence intervals to
+`ci.indep.interaction()` that you computed using some other method. Also note that we
+do not pass the confidence level in this case; `ci.indep.interaction()` computes the
+same confidence level that is implied in the lower and upper boundaries of the four
+proportions.
 
 ## Other functions
 
@@ -146,8 +148,8 @@ $u
 
 ```
 
-We obtain the difference between the two proportions and the lower and upper boundary
-for the difference of the proportions.
+We thus obtain the difference between the two proportions and the lower and upper
+boundary for the difference of the proportions.
 
 ## More help
 
@@ -163,7 +165,7 @@ Use the help functions for more help on `propint's` functions in your R concole:
 ## Questions and suggestions
 
 If you have any questions or suggestions (which are greatly appreciated), just open
-an issue at Github or contact me via martin.papenberg<at>hhu.de.
+an issue at Github or contact me via martin.papenberg at hhu.de.
 
 ## References 
 
