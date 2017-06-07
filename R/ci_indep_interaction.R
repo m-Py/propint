@@ -4,7 +4,7 @@
 #'
 #' This function tests for an interaction effect in proportions: it tests the
 #' difference between the differences of two proportions (i.e. (p1 - p2) and (p3 -
-#' p4)) using a confidence intervall. This corresponds closely to a 2x2 ANOVA when
+#' p4)) using a confidence interval. This corresponds closely to a 2x2 ANOVA when
 #' outcomes are dichotomous rather than continuous. See Newcombe (2001).
 #' 
 #' @param ci What confidence interval - give as a natural number (e.g. 95 for the
@@ -117,19 +117,8 @@ ci.indep.interaction <- function(
         diff1 <- ci.two.indep.props(p1=p1, l1=l1, u1=u1, p2=p2, l2=l2, u2=u2)
         diff2 <- ci.two.indep.props(p1=p3, l1=l3, u1=u3, p2=p4, l2=l4, u2=u4)
     }
-    
-    l1 <- diff1$l
-    u1 <- diff1$u
-    d1 <- diff1$d
 
-    l2 <- diff2$l
-    u2 <- diff2$u
-    d2 <- diff2$d
-    
-    # Step 2: Determine CIs for difference of differences
-    delta   <- sqrt( (d1 - l1)^2 + (u2 - d2)^2 ) # see Newcombe 2001
-    epsilon <- sqrt( (u1 - d1)^2 + (d2 - l2)^2 )
-    d <- d1 - d2
-    
-    return(list(d=d, l=d-delta, u=d+epsilon))
+    return(ci.two.indep.props(p1 = diff1$d, l1 = diff1$l, u1 = diff1$u, 
+                              p2 = diff2$d, l2 = diff2$l, u2 = diff2$u))
+
 } 
