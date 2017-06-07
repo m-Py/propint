@@ -1,6 +1,6 @@
 
 #'
-#' Confidence interval for the interaction of proportions
+#' Confidence interval for the interaction of pairs of dependent proportions
 #'
 #' This function returns a confidence interval for the interaction of two 
 #' pairs of dependent proportions. This for example corresponds to a repeated
