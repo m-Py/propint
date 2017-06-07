@@ -31,9 +31,12 @@
 #'
 #' @examples
 #'
+#' # Example from From Newcombe (Section 4.2; 2001):
+#' ci.mixed.interaction(95, 294, 36, 59, 57, 209, 19, 32, 50)
 #' # Example from From Newcombe (Section 4.3; 2001):
-#'
-#' ci.mixed.interaction(95, e1=2, f1=12, g1=3, h1=17, e2=4, f2=1, g2=2, h2=25)
+#' ci.mixed.interaction(95, 2, 12, 3, 17, 4, 1, 2, 25)
+#' # Example from From Newcombe (Section 4.4; 2001):
+#' ci.mixed.interaction(95, 11, 6, 1, 3, 9, 4, 5, 1)
 #' 
 #' @author Martin Papenberg \email{martin.papenberg@@hhu.de}
 #'
