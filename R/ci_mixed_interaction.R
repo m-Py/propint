@@ -2,10 +2,11 @@
 #'
 #' Confidence interval for the interaction of pairs of dependent proportions
 #'
-#' This function returns a confidence interval for the interaction of two 
-#' pairs of dependent proportions. This for example corresponds to a repeated
-#' measures design where two independent groups yield dichotomous responses on 
-#' two different occasions.
+#' This function computes a confidence interval for the interaction of two 
+#' pairs of dependent proportions (i.e.: is the difference in proportions
+#' in one pair larger than the difference of proportions in the other pair.
+#' This corresponds to a repeated measures design where subjects in two 
+#' independent groups give dichotomous responses on two different occasions.
 #' 
 #' @param ci What confidence interval - give as a natural number (e.g. 95 for the
 #'     95\% confidence interval).
