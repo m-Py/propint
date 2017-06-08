@@ -58,12 +58,11 @@ p2 <- ci.one.prop(95, 48, 80)
 ci.two.indep.props(p1=p1$p, p2=p2$p, l1=p1$l, l2=p2$l, u1=p1$u, u2=p2$u)
 
 }
-\author{
-Martin Papenberg \email{martin.papenberg@hhu.de}
-}
 \references{
 Newcombe, R. G. (1998). Interval estimation for the difference between
       independent proportions: comparison of eleven methods. Statistics in medicine,
       17(8), 873-890.
 }
-
+\author{
+Martin Papenberg \email{martin.papenberg@hhu.de}
+}

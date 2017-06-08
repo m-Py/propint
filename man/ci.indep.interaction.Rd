@@ -68,7 +68,7 @@ A \code{list} containing the confidence interval boudaries.
 \description{
 This function tests for an interaction effect in proportions: it tests the
 difference between the differences of two proportions (i.e. (p1 - p2) and (p3 -
-p4)) using a confidence intervall. This corresponds closely to a 2x2 ANOVA when
+p4)) using a confidence interval. This corresponds closely to a 2x2 ANOVA when
 outcomes are dichotomous rather than continuous. See Newcombe (2001).
 }
 \examples{
@@ -86,12 +86,11 @@ ci.indep.interaction(p1=p1$p, p2=p2$p, p3=p3$p, p4=p4$p, l1=p1$l, l2=p2$l, l3=p3
                      u1=p1$u, u2=p2$u, u3=p3$u, u4=p4$u)
 
 }
-\author{
-Martin Papenberg \email{martin.papenberg@hhu.de}
-}
 \references{
 Newcombe, R. G. (2001). Estimating the difference between differences: measurement
       of additive scale interaction for proportions. Statistics in medicine, 20(19),
       2885-2893.
 }
-
+\author{
+Martin Papenberg \email{martin.papenberg@hhu.de}
+}

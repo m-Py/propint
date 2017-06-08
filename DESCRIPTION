@@ -1,17 +1,15 @@
 Package: propint
 Type: Package
-Title: The difference of differences - computing interactions of
-    proportions
+Title: propint - computing interactions of proportions
 Author: Martin Papenberg <martin.papenberg@hhu.de>
 Maintainer: Martin Papenberg <martin.papenberg@hhu.de>
-Depends:
-    R (>= 2.10.0)
-Description: Computes the confidence interval for interactions in
-    proportions
+Depends: R (>= 2.10.0)
+Description: Computes confidence intervals for interactions in
+        independent and dependent proportions
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyLoad: yes
 URL: https://github.com/m-Py/propint
-Version: 0.01-1
-Date: 2016-10-25
-RoxygenNote: 5.0.1
+Version: 0.020
+Date: 2017-06-08
+RoxygenNote: 6.0.1

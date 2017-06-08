@@ -30,9 +30,6 @@ ci.one.prop(ci=95, r=81, n=263)
 ci.one.prop(ci=95, r=15, n=148)
 
 }
-\author{
-Martin Papenberg \email{martin.papenberg@hhu.de}
-}
 \references{
 Newcombe, R. G. (1998). Two‐sided confidence intervals for the single
       proportion: comparison of seven methods. Statistics in medicine, 17(8),
@@ -41,4 +38,6 @@ Newcombe, R. G. (1998). Two‐sided confidence intervals for the single
   Wilson, E. B. (1927). Probable inference, the law of succession, and statistical
       inference. Journal of the American Statistical Association, 22(158), 209-212.
 }
-
+\author{
+Martin Papenberg \email{martin.papenberg@hhu.de}
+}
