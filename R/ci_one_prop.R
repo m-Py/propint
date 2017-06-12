@@ -31,6 +31,8 @@
 #' 
 #' @author Martin Papenberg \email{martin.papenberg@@hhu.de}
 #'
+#' @importFrom stats qnorm
+#'
 #' @export
 #' 
 

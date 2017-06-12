@@ -4,12 +4,13 @@ Title: Testing for interactions in proportions
 Author: Martin Papenberg <martin.papenberg@hhu.de>
 Maintainer: Martin Papenberg <martin.papenberg@hhu.de>
 Depends: R (>= 2.10.0)
-Description: Computes confidence intervals to test for interactions of
-        independent and dependent proportions
-License: GPL (>= 3)
+Description: propint computes confidence intervals to test for
+        interactions of independent and dependent proportions.
+License: GPL-3 + file LICENSE
 Encoding: UTF-8
 LazyLoad: yes
 URL: https://github.com/m-Py/propint
+Suggests: testthat
 Version: 0.2.0
 Date: 2017-06-12
 RoxygenNote: 6.0.1

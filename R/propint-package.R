@@ -7,13 +7,13 @@
 #' Date: \tab 2017-06-12\cr
 #' Depends: \tab R (>= 2.10.0)\cr
 #' Encoding: \tab UTF-8\cr
-#' License: \tab GPL (>= 3)\cr
+#' License: \tab GPL-3 + file LICENSE\cr
 #' LazyLoad: \tab yes\cr
 #' URL: \tab https://github.com/m-Py/propint\cr
 #' }
 #'
-#' Computes confidence intervals to test for interactions of independent and dependent
-#' proportions
+#' propint computes confidence intervals to test for interactions of independent and
+#' dependent proportions.
 #'
 #' @aliases propint-package
 #' @name propint-package
