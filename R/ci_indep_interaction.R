@@ -67,7 +67,7 @@
 #' 
 
 ci.indep.interaction <- function(
-    ci ,
+    ci = NULL ,
     a1 = NULL ,
     m1 = NULL ,
     b1 = NULL ,

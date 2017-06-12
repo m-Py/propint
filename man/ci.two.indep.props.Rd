@@ -4,7 +4,7 @@
 \alias{ci.two.indep.props}
 \title{Confidence interval for the difference of two independent proportions}
 \usage{
-ci.two.indep.props(ci, a = NULL, m = NULL, b = NULL, n = NULL,
+ci.two.indep.props(ci = NULL, a = NULL, m = NULL, b = NULL, n = NULL,
   p1 = NULL, l1 = NULL, u1 = NULL, p2 = NULL, l2 = NULL, u2 = NULL)
 }
 \arguments{
