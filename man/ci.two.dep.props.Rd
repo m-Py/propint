@@ -7,7 +7,7 @@
 ci.two.dep.props(ci, e, f, g, h)
 }
 \arguments{
-\item{ci}{What confidence interval - give as a natural number (e.g. 95 for the
+\item{ci}{The confidence level - pass as a natural number (e.g. 95 for the
 95\% confidence interval).}
 
 \item{e}{Number of cases for which both events are 1.}
@@ -21,14 +21,20 @@ ci.two.dep.props(ci, e, f, g, h)
 \value{
 A \code{list} containing the confidence interval boudaries
   \item{d}{The difference between the two dependent proportions (d = (f-g)/n)}
-  \item{l}{The lower bound of the confidence interval of d = (f-g)/n)}
-  \item{u}{The upper bound of the confidence interval of d = (f-g)/n)}
+  \item{l}{The lower bound of the confidence interval}
+  \item{u}{The upper bound of the confidence interval}
+  \item{n}{The total n (= e + f + g + h)}
 }
 \description{
-This function returns the confidence interval of the difference of two dependent
+This function returns the confidence interval for the difference of two dependent
 proportions. It can be used for statistical inference, i.e. we assume that two
 proportions are significantly different from each other if the confidence interval
 does not contain 0. See Newcombe (Method 10; 1998).
+}
+\details{
+The sum of the frequencies e + f + g + h must be equal to the total n.
+ The parameter of interest is d=(f-g)/n, which is the difference between the two
+ dependent proportions.
 }
 \examples{
 # Examples from Newcombe (1998):

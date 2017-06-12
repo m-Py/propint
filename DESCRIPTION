@@ -1,15 +1,15 @@
 Package: propint
 Type: Package
-Title: propint - computing interactions of proportions
+Title: Testing for interactions in proportions
 Author: Martin Papenberg <martin.papenberg@hhu.de>
 Maintainer: Martin Papenberg <martin.papenberg@hhu.de>
 Depends: R (>= 2.10.0)
-Description: Computes confidence intervals for interactions in
+Description: Computes confidence intervals to test for interactions of
         independent and dependent proportions
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyLoad: yes
 URL: https://github.com/m-Py/propint
-Version: 0.020
-Date: 2017-06-08
+Version: 0.2.0
+Date: 2017-06-12
 RoxygenNote: 6.0.1

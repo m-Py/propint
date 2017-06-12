@@ -7,7 +7,7 @@
 ci.mixed.interaction(ci, e1, f1, g1, h1, e2, f2, g2, h2)
 }
 \arguments{
-\item{ci}{What confidence interval - give as a natural number (e.g. 95 for the
+\item{ci}{The confidence level - pass as a natural number (e.g. 95 for the
 95\% confidence interval).}
 
 \item{e1}{Group 1: Number of cases for which both events are 1.}
@@ -35,7 +35,7 @@ A \code{list} containing the confidence interval boudaries.
 \description{
 This function computes a confidence interval for the interaction of two 
 pairs of dependent proportions (i.e.: is the difference in proportions
-in one pair larger than the difference of proportions in the other pair.
+in one group larger than the difference of proportions in another group).
 This corresponds to a repeated measures design where subjects in two 
 independent groups give dichotomous responses on two different occasions.
 }

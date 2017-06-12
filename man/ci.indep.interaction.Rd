@@ -4,13 +4,13 @@
 \alias{ci.indep.interaction}
 \title{Confidence interval for interaction of proportions}
 \usage{
-ci.indep.interaction(ci = NULL, a1 = NULL, m1 = NULL, b1 = NULL,
-  n1 = NULL, a2 = NULL, m2 = NULL, b2 = NULL, n2 = NULL, p1 = NULL,
-  l1 = NULL, u1 = NULL, p2 = NULL, l2 = NULL, u2 = NULL, p3 = NULL,
-  l3 = NULL, u3 = NULL, p4 = NULL, l4 = NULL, u4 = NULL)
+ci.indep.interaction(ci, a1 = NULL, m1 = NULL, b1 = NULL, n1 = NULL,
+  a2 = NULL, m2 = NULL, b2 = NULL, n2 = NULL, p1 = NULL, l1 = NULL,
+  u1 = NULL, p2 = NULL, l2 = NULL, u2 = NULL, p3 = NULL, l3 = NULL,
+  u3 = NULL, p4 = NULL, l4 = NULL, u4 = NULL)
 }
 \arguments{
-\item{ci}{What confidence interval - give as a natural number (e.g. 95 for the
+\item{ci}{The confidence level - pass as a natural number (e.g. 95 for the
 95\% confidence interval). Only pass this argument when passing absolute
 frequencies (a, m , b, n); do not combine with proportions and confidence
 interval boundaries.}

@@ -53,7 +53,7 @@
 #' 
 
 ci.two.indep.props <- function(
-    ci = NULL ,
+    ci ,
     a = NULL , 
     m = NULL ,
     b = NULL ,

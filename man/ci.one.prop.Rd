@@ -7,7 +7,7 @@
 ci.one.prop(ci, r, n)
 }
 \arguments{
-\item{ci}{What confidence interval - give as a natural number (e.g. 95 for the
+\item{ci}{The confidence level - pass as a natural number (e.g. 95 for the
 95\% confidence interval)}
 
 \item{r}{Frequency of events}
@@ -22,7 +22,7 @@ A \code{list} containing the confidence interval boudaries.
 }
 \description{
 This function returns the confidence interval for a single proportion using
-»Wilson's score« as recommended in Newcombe (Method 3, 1998)
+»Wilson's score« (1927) as recommended in Newcombe (Method 3, 1998).
 }
 \examples{
 # Examples from Newcombe (1998):

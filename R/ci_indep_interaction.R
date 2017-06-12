@@ -7,7 +7,7 @@
 #' p4)) using a confidence interval. This corresponds closely to a 2x2 ANOVA when
 #' outcomes are dichotomous rather than continuous. See Newcombe (2001).
 #' 
-#' @param ci What confidence interval - give as a natural number (e.g. 95 for the
+#' @param ci The confidence level - pass as a natural number (e.g. 95 for the
 #'     95\% confidence interval). Only pass this argument when passing absolute
 #'     frequencies (a, m , b, n); do not combine with proportions and confidence
 #'     interval boundaries.
@@ -67,7 +67,7 @@
 #' 
 
 ci.indep.interaction <- function(
-    ci = NULL ,
+    ci ,
     a1 = NULL ,
     m1 = NULL ,
     b1 = NULL ,
