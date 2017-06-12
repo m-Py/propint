@@ -2,16 +2,19 @@
 % Please edit documentation in R/ci_two_indep_props.R
 \name{ci.two.indep.props}
 \alias{ci.two.indep.props}
-\title{Confidence interval for the difference of two independent proportions}
+\title{Confidence interval for the difference of two independent
+proportions}
 \usage{
 ci.two.indep.props(ci = NULL, a = NULL, m = NULL, b = NULL, n = NULL,
   p1 = NULL, l1 = NULL, u1 = NULL, p2 = NULL, l2 = NULL, u2 = NULL)
 }
 \arguments{
-\item{ci}{What confidence interval - give as a natural number (e.g. 95 for the
-95\% confidence interval).  Only pass this argument when passing absolute
-frequencies (a, m , b, n); do not combine with proportions and confidence
-interval boundaries.}
+\item{ci}{What confidence interval - give as a natural number
+(e.g. 95 for the 95\% confidence interval).  Only pass this
+argument when passing absolute frequencies (a, m , b, n); do
+not combine with proportions and confidence interval boundaries
+(in this case the confidence interval is implied in the
+boundaries from the passed intervals).}
 
 \item{a}{Frequency of events in proportion A}
 
@@ -21,31 +24,32 @@ interval boundaries.}
 
 \item{n}{Total frequency in proportion B}
 
-\item{p1}{Proportion 1 - a value between 0 and 1. Pass only if absolute
-frequencies (a, m , b, n) are not given.}
+\item{p1}{Proportion 1 - a value between 0 and 1. Pass only if
+absolute frequencies (a, m , b, n) are not given.}
 
 \item{l1}{The lower bound of the confidence interval of p1.}
 
 \item{u1}{The upper bound of the confidence interval of p1.}
 
-\item{p2}{Proportion 2 - a value between 0 and 1. Pass only if absolute
-frequencies (a, m , b, n) are not given.}
+\item{p2}{Proportion 2 - a value between 0 and 1. Pass only if
+absolute frequencies (a, m , b, n) are not given.}
 
 \item{l2}{The lower bound of the confidence interval of p2.}
 
 \item{u2}{The upper bound of the confidence interval of p2.}
 }
 \value{
-A \code{list} containing the confidence interval boudaries
+A \code{list} containing the confidence interval boundaries
   \item{d}{The difference between the proportions (a/m) - (b/n)}
-  \item{l}{The lower bound of the confidence interval of d = (a/m) - (b/n)}
-  \item{u}{The upper bound of the confidence interval of d = (a/m) - (b/n)}
+  \item{l}{The lower bound of the confidence interval}
+  \item{u}{The upper bound of the confidence interval}
 }
 \description{
-This function returns the confidence interval of the difference of two independent
-proportions. It can be used for statistical inference, i.e. we assume that two
-proportions are significantly different from each other if the confidence interval
-does not contain 0. See Newcombe (Method 10, 1998).
+This function returns the confidence interval for the difference of
+two independent proportions. It can be used for statistical
+inference, i.e. we assume that two proportions are significantly
+different from each other if the confidence interval does not cover
+0. See Newcombe (Method 10, 1998).
 }
 \examples{
 # Examples from Newcombe (1998):
@@ -59,9 +63,9 @@ ci.two.indep.props(p1=p1$p, p2=p2$p, l1=p1$l, l2=p2$l, u1=p1$u, u2=p2$u)
 
 }
 \references{
-Newcombe, R. G. (1998). Interval estimation for the difference between
-      independent proportions: comparison of eleven methods. Statistics in medicine,
-      17(8), 873-890.
+Newcombe, R. G. (1998). Interval estimation for the difference
+      between independent proportions: comparison of eleven
+      methods. Statistics in medicine, 17(8), 873-890.
 }
 \author{
 Martin Papenberg \email{martin.papenberg@hhu.de}

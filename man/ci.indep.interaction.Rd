@@ -2,7 +2,7 @@
 % Please edit documentation in R/ci_indep_interaction.R
 \name{ci.indep.interaction}
 \alias{ci.indep.interaction}
-\title{Confidence interval for interaction of proportions}
+\title{Confidence interval for the interaction of independent proportions}
 \usage{
 ci.indep.interaction(ci = NULL, a1 = NULL, m1 = NULL, b1 = NULL,
   n1 = NULL, a2 = NULL, m2 = NULL, b2 = NULL, n2 = NULL, p1 = NULL,
@@ -10,10 +10,12 @@ ci.indep.interaction(ci = NULL, a1 = NULL, m1 = NULL, b1 = NULL,
   l3 = NULL, u3 = NULL, p4 = NULL, l4 = NULL, u4 = NULL)
 }
 \arguments{
-\item{ci}{The confidence level - pass as a natural number (e.g. 95 for the
-95\% confidence interval). Only pass this argument when passing absolute
-frequencies (a, m , b, n); do not combine with proportions and confidence
-interval boundaries.}
+\item{ci}{The confidence level - pass as a natural number (e.g. 95
+for the 95\% confidence interval). Only pass this argument when
+passing absolute frequencies (a, m , b, n); do not combine with
+proportions and confidence interval boundaries (in this case
+the confidence interval is implied in the boundaries from the
+passed intervals).}
 
 \item{a1}{Frequency of events in proportion A1}
 
@@ -31,29 +33,29 @@ interval boundaries.}
 
 \item{n2}{Total frequency in proportion B2}
 
-\item{p1}{Proportion 1 - a value between 0 and 1. Pass only if absolute
-frequencies (a, m , b, n) are not given.}
+\item{p1}{Proportion 1 - a value between 0 and 1. Pass only if
+absolute frequencies (a, m , b, n) are not given.}
 
 \item{l1}{The lower bound of the confidence interval of p1.}
 
 \item{u1}{The upper bound of the confidence interval of p1.}
 
-\item{p2}{Proportion 2 - a value between 0 and 1. Pass only if absolute
-frequencies (a, m , b, n) are not given.}
+\item{p2}{Proportion 2 - a value between 0 and 1. Pass only if
+absolute frequencies (a, m , b, n) are not given.}
 
 \item{l2}{The lower bound of the confidence interval of p2.}
 
 \item{u2}{The upper bound of the confidence interval of p2.}
 
-\item{p3}{Proportion 3 - a value between 0 and 1. Pass only if absolute
-frequencies (a, m , b, n) are not given.}
+\item{p3}{Proportion 3 - a value between 0 and 1. Pass only if
+absolute frequencies (a, m , b, n) are not given.}
 
 \item{l3}{The lower bound of the confidence interval of p3.}
 
 \item{u3}{The upper bound of the confidence interval of p3.}
 
-\item{p4}{Proportion 4 - a value between 0 and 1. Pass only if absolute
-frequencies (a, m , b, n) are not given.}
+\item{p4}{Proportion 4 - a value between 0 and 1. Pass only if
+absolute frequencies (a, m , b, n) are not given.}
 
 \item{l4}{The lower bound of the confidence interval of p4.}
 
@@ -61,15 +63,18 @@ frequencies (a, m , b, n) are not given.}
 }
 \value{
 A \code{list} containing the confidence interval boudaries.
-  \item{d}{The difference between differences ((a1/m1 - b1/n1) - (a2/m2 - b2/n2) = (p1 - p2) - (p3 - p4)}
-  \item{l}{The lower bound of the confidence interval d}
-  \item{u}{The upper bound of the confidence interval d}
+  \item{d}{The difference between differences (d = (a1/m1 - b1/n1) - (a2/m2 - b2/n2) = (p1 - p2) - (p3 - p4)}
+  \item{l}{The lower bound of the confidence interval}
+  \item{u}{The upper bound of the confidence interval}
 }
 \description{
-This function tests for an interaction effect in proportions: it tests the
-difference between the differences of two proportions (i.e. (p1 - p2) and (p3 -
-p4)) using a confidence interval. This corresponds closely to a 2x2 ANOVA when
-outcomes are dichotomous rather than continuous. See Newcombe (2001).
+This function tests for an interaction effect in independent
+proportions: it tests the whether the difference between two
+proportions is larger than the difference between two different
+proportions using a confidence interval (i.e., the parameter of
+interest is d = (p1 - p2) - (p3 - p4)). This corresponds closely to
+a 2x2 ANOVA when outcomes are dichotomous rather than
+continuous. See Newcombe (2001).
 }
 \examples{
 

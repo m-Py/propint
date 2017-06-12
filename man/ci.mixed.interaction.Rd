@@ -2,42 +2,51 @@
 % Please edit documentation in R/ci_mixed_interaction.R
 \name{ci.mixed.interaction}
 \alias{ci.mixed.interaction}
-\title{Confidence interval for the interaction of pairs of dependent proportions}
+\title{Confidence interval for the interaction of two pairs of dependent
+proportions}
 \usage{
 ci.mixed.interaction(ci, e1, f1, g1, h1, e2, f2, g2, h2)
 }
 \arguments{
-\item{ci}{The confidence level - pass as a natural number (e.g. 95 for the
-95\% confidence interval).}
+\item{ci}{The confidence level - pass as a natural number (e.g. 95
+for the 95\% confidence interval).}
 
 \item{e1}{Group 1: Number of cases for which both events are 1.}
 
-\item{f1}{Group 1: Number of cases for which the first event is 1, and the second event is 0.}
+\item{f1}{Group 1: Number of cases for which the first event is 1,
+and the second event is 0.}
 
-\item{g1}{Group 1: Number of cases for which the first event is 0, and the second event is 1.}
+\item{g1}{Group 1: Number of cases for which the first event is 0,
+and the second event is 1.}
 
 \item{h1}{Group 1: Number of cases for which both events are 0.}
 
 \item{e2}{Group 2: Number of cases for which both events are 1.}
 
-\item{f2}{Group 2: Number of cases for which the first event is 1, and the second event is 0.}
+\item{f2}{Group 2: Number of cases for which the first event is 1,
+and the second event is 0.}
 
-\item{g2}{Group 2: Number of cases for which the first event is 0, and the second event is 1.}
+\item{g2}{Group 2: Number of cases for which the first event is 0,
+and the second event is 1.}
 
 \item{h2}{Group 2: Number of cases for which both events are 0.}
 }
 \value{
 A \code{list} containing the confidence interval boudaries.
   \item{d}{The difference between differences of the two paired proportions}
-  \item{l}{The lower bound of the confidence interval d}
-  \item{u}{The upper bound of the confidence interval d}
+  \item{l}{The lower bound of the confidence interval}
+  \item{u}{The upper bound of the confidence interval}
 }
 \description{
-This function computes a confidence interval for the interaction of two 
-pairs of dependent proportions (i.e.: is the difference in proportions
-in one group larger than the difference of proportions in another group).
-This corresponds to a repeated measures design where subjects in two 
-independent groups give dichotomous responses on two different occasions.
+This function computes a confidence interval for the interaction of
+two pairs of dependent proportions. This corresponds to a repeated
+measures design where subjects in two independent groups give
+dichotomous responses on two different occasions (thus, this
+analysis corresponds closely to a 2x2 mixed ANOVA with one
+between-subjects independent variable and one within-subjects
+independent variable). The confidence interval tests if the
+difference in proportions in one group is larger than the
+difference of proportions in the other group.
 }
 \examples{
 
@@ -50,9 +59,9 @@ ci.mixed.interaction(95, 11, 6, 1, 3, 9, 4, 5, 1)
 
 }
 \references{
-Newcombe, R. G. (2001). Estimating the difference between differences: measurement
-      of additive scale interaction for proportions. Statistics in medicine, 20(19),
-      2885-2893.
+Newcombe, R. G. (2001). Estimating the difference between
+      differences: measurement of additive scale interaction for
+      proportions. Statistics in medicine, 20(19), 2885-2893.
 }
 \author{
 Martin Papenberg \email{martin.papenberg@hhu.de}

@@ -2,22 +2,26 @@
 #'
 #' Confidence interval for the difference of two dependent proportions
 #'
-#' This function returns the confidence interval for the difference of two dependent
-#' proportions. It can be used for statistical inference, i.e. we assume that two
-#' proportions are significantly different from each other if the confidence interval
-#' does not contain 0. See Newcombe (Method 10; 1998).
+#' This function returns the confidence interval for the difference of
+#' two dependent proportions. It can be used for statistical
+#' inference, i.e. we assume that two proportions are significantly
+#' different from each other if the confidence interval does not
+#' contain 0. See Newcombe (Method 10; 1998).
 #' 
 #'
-#' @param ci The confidence level - pass as a natural number (e.g. 95 for the
-#'     95\% confidence interval).  
+#' @param ci The confidence level - pass as a natural number (e.g. 95
+#'     for the 95\% confidence interval).
 #' @param e Number of cases for which both events are 1.
-#' @param f Number of cases for which the first event is 1, and the second event is 0.
-#' @param g Number of cases for which the first event is 0, and the second event is 1.
+#' @param f Number of cases for which the first event is 1, and the
+#'     second event is 0.
+#' @param g Number of cases for which the first event is 0, and the
+#'     second event is 1.
 #' @param h Number of cases for which both events are 0.
 #'
-#' @details The sum of the frequencies e + f + g + h must be equal to the total n.
-#'  The parameter of interest is d=(f-g)/n, which is the difference between the two
-#'  dependent proportions.
+#' @details The sum of the frequencies e + f + g + h must be equal to
+#'     the total n in the sample. The parameter of interest is
+#'     d=(f-g)/n, which is the difference between the two dependent
+#'     proportions.
 #' 
 #' @return A \code{list} containing the confidence interval boudaries
 #'   \item{d}{The difference between the two dependent proportions (d = (f-g)/n)}
@@ -27,13 +31,13 @@
 #'
 #' @references
 #'
-#'   Newcombe, R. G. (1998). Improved confidence intervals for the difference 
-#'       between binomial proportions based on paired data. Statistics in 
-#'       medicine, 17(22), 2635-2650.
+#'   Newcombe, R. G. (1998). Improved confidence intervals for the
+#'       difference between binomial proportions based on paired
+#'       data. Statistics in medicine, 17(22), 2635-2650.
 #'
-#'   Newcombe, R. G. (2001). Estimating the difference between differences: measurement
-#'       of additive scale interaction for proportions. Statistics in medicine, 20(19),
-#'       2885-2893.
+#'   Newcombe, R. G. (2001). Estimating the difference between
+#'       differences: measurement of additive scale interaction for
+#'       proportions. Statistics in medicine, 20(19), 2885-2893.
 #'
 #' @examples
 #' # Examples from Newcombe (1998):
@@ -79,7 +83,7 @@ ci.two.dep.props <- function(ci, e, f, g, h) {
     du3 <- u3 - (e+g)/n
     
 
-    # upper and lower bound for interval
+    # upper and lower bound for the confidence interval
     delta   <- sqrt(dl2^2 - 2*phi*dl2*du3 + du3^2)
     epsilon <- sqrt(du2^2 - 2*phi*du2*dl3 + dl3^2)
     
