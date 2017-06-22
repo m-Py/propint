@@ -27,7 +27,6 @@
 #'   \item{d}{The difference between the two dependent proportions (d = (f-g)/n)}
 #'   \item{l}{The lower bound of the confidence interval}
 #'   \item{u}{The upper bound of the confidence interval}
-#'   \item{n}{The total n (= e + f + g + h)}
 #'
 #' @references
 #'
@@ -87,5 +86,5 @@ ci.two.dep.props <- function(ci, e, f, g, h) {
     delta   <- sqrt(dl2^2 - 2*phi*dl2*du3 + du3^2)
     epsilon <- sqrt(du2^2 - 2*phi*du2*dl3 + dl3^2)
     
-    return(list(d=d, l=d-delta, u=d+epsilon,n=n))
+    return(list(d=d, l=d-delta, u=d+epsilon))
 }

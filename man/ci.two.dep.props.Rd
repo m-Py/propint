@@ -25,7 +25,6 @@ A \code{list} containing the confidence interval boudaries
   \item{d}{The difference between the two dependent proportions (d = (f-g)/n)}
   \item{l}{The lower bound of the confidence interval}
   \item{u}{The upper bound of the confidence interval}
-  \item{n}{The total n (= e + f + g + h)}
 }
 \description{
 This function returns the confidence interval for the difference of
