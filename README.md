@@ -112,7 +112,7 @@ the four confidence intervals and the proportions directly to
 is used to determine the boundaries of the 95% confidence interval. 
 `ci.one.prop()` is also part of the `propint` package and is used as the 
 default computation of confidence intervals of single proportions (see 
-Newcombe, 1998a). Consequently, you can pass confidence intervals to 
+Newcombe, 1998c). Consequently, you can pass confidence intervals to 
 `ci.indep.interaction()` that you computed using some other method. Also 
 note that we do not pass the confidence level in this case; 
 `ci.indep.interaction()` computes the same confidence level that is 
@@ -127,7 +127,7 @@ To be written
 `propint` can be used for a classical test of the difference between two 
 proportions. The function `ci.two.indep.props()` computes a confidence 
 interval of the difference of two independent proportions (relying on 
-method 10 in Newcombe, 1998). It can be used in two ways analogue to 
+method 10 in Newcombe, 1998b). It can be used in two ways analogue to 
 `ci.indep.interaction()`:
 
 ```R
