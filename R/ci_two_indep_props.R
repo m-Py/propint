@@ -96,11 +96,11 @@ ci.two.indep.props <- function(
         l2 <- ci.one.prop(ci, b, n)$l
         u2 <- ci.one.prop(ci, b, n)$u
     } 
-    # User input case (b): confidence intervalls were passed as user input;
+    # User input case (b): confidence intervals were passed as user input;
     # thus, they need not be computed via ci.one.prop()
 
     d  <- p1 - p2 # difference between proportions
-    delta   <- sqrt( (p1 - l1)^2 + (u2 - p2)^2 ) # see Newcombe 1998, 2001
+    delta   <- sqrt( (p1 - l1)^2 + (u2 - p2)^2 ) 
     epsilon <- sqrt( (u1 - p1)^2 + (p2 - l2)^2 )
 
     return(list(d=d, l=d-delta, u=d+epsilon))
