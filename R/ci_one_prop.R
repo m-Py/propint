@@ -37,12 +37,18 @@
 #' 
 
 ci.one.prop <- function(ci, r, n) {
-    alpha <- (100 - ci)/100
-    z     <- qnorm((1-alpha/2))
+    z     <- get.z.score(ci)
 
     p <- r/n
     lower <- (2*n*p + z^2 - (z*sqrt(z^2 + 4*n*p*(1-p)) )) / (2*(n+z^2))
     upper <- (2*n*p + z^2 + (z*sqrt(z^2 + 4*n*p*(1-p)) )) / (2*(n+z^2))
     
     return(list(p=p, l=lower, u=upper))
+}
+
+
+get.z.score <- function(ci) {
+    alpha <- (100 - ci)/100
+    z     <- qnorm((1-alpha/2))
+    return(z)
 }
