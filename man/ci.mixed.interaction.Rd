@@ -41,12 +41,12 @@ A \code{list} containing the confidence interval boudaries.
 This function computes a confidence interval for the interaction of
 two pairs of dependent proportions. This corresponds to a repeated
 measures design where subjects in two independent groups give
-dichotomous responses on two different occasions (thus, this
-analysis corresponds closely to a 2x2 mixed ANOVA with one
-between-subjects independent variable and one within-subjects
-independent variable). The confidence interval tests if the
-difference in proportions in one group is larger than the
-difference of proportions in the other group.
+dichotomous responses on two different occasions (thus, this analysis
+corresponds closely to a 2x2 mixed ANOVA with one between-subjects
+independent variable and one within-subjects independent
+variable). The confidence interval tests if the difference in
+proportions in one group is larger than the difference of proportions
+in the other group.
 }
 \examples{
 

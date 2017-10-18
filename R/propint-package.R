@@ -3,8 +3,8 @@
 #' \tabular{ll}{
 #' Package: \tab propint\cr
 #' Type: \tab Package\cr
-#' Version: \tab 0.2.11\cr
-#' Date: \tab 2017-06-27\cr
+#' Version: \tab 0.2.12\cr
+#' Date: \tab 2017-10-18\cr
 #' Depends: \tab R (>= 2.10.0)\cr
 #' Encoding: \tab UTF-8\cr
 #' License: \tab GPL-3 + file LICENSE\cr
@@ -12,8 +12,8 @@
 #' URL: \tab https://github.com/m-Py/propint\cr
 #' }
 #'
-#' propint computes confidence intervals to test for interactions of independent and
-#' dependent proportions.
+#' propint computes confidence intervals of proportions, of their differences, and of
+#' interactions in proportions.
 #'
 #' @aliases propint-package
 #' @name propint-package

@@ -13,9 +13,9 @@ ci.indep.interaction(ci = NULL, a1 = NULL, m1 = NULL, b1 = NULL,
 \item{ci}{The confidence level - pass as a natural number (e.g. 95
 for the 95\% confidence interval). Only pass this argument when
 passing absolute frequencies (a, m , b, n); do not combine with
-proportions and confidence interval boundaries (in this case
-the confidence interval is implied in the boundaries from the
-passed intervals).}
+proportions and confidence interval boundaries (in this case the
+confidence interval is implied in the boundaries from the passed
+intervals).}
 
 \item{a1}{Frequency of events in proportion A1}
 
@@ -72,15 +72,16 @@ This function tests for an interaction effect in independent
 proportions: it tests the whether the difference between two
 proportions is larger than the difference between two different
 proportions using a confidence interval (i.e., the parameter of
-interest is d = (p1 - p2) - (p3 - p4)). This corresponds closely to
-a 2x2 ANOVA when outcomes are dichotomous rather than
-continuous. See Newcombe (2001).
+interest is d = (p1 - p2) - (p3 - p4)). This corresponds closely to a
+2x2 ANOVA when outcomes are dichotomous rather than continuous. See
+Newcombe (2001).
 }
 \examples{
 
 # Example from From Newcombe (2001):
 
-ci.indep.interaction(ci=95, a1=17, m1=65, b1=17, n1=75, a2=18, m2=72, b2=16, n2=65)
+ci.indep.interaction(ci=95, a1=17, m1=65, b1=17, n1=75, a2=18, m2=72,
+b2=16, n2=65)
 
 # Alternative usage:
 p1 <- ci.one.prop(95, 17, 65)
@@ -92,9 +93,9 @@ ci.indep.interaction(p1=p1$p, p2=p2$p, p3=p3$p, p4=p4$p, l1=p1$l, l2=p2$l, l3=p3
 
 }
 \references{
-Newcombe, R. G. (2001). Estimating the difference between differences: measurement
-      of additive scale interaction for proportions. Statistics in medicine, 20(19),
-      2885-2893.
+Newcombe, R. G. (2001). Estimating the difference between
+      differences: measurement of additive scale interaction for
+      proportions. Statistics in medicine, 20(19), 2885-2893.
 }
 \author{
 Martin Papenberg \email{martin.papenberg@hhu.de}
