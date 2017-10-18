@@ -2,11 +2,12 @@
 #'
 #' Confidence interval for a single proportion
 #'
-#' This function returns the confidence interval for a single proportion using
-#' »Wilson's score« (1927) as recommended in Newcombe (Method 3, 1998).
+#' This function returns the confidence interval for a single proportion
+#' using »Wilson's score« (1927) as recommended in Newcombe (Method 3,
+#' 1998).
 #'
-#' @param ci The confidence level - pass as a natural number (e.g. 95 for the
-#'     95\% confidence interval) 
+#' @param ci The confidence level - pass as a natural number (e.g. 95
+#'     for the 95\% confidence interval)
 #' @param r Frequency of events
 #' @param n Total trial frequency
 #'
@@ -17,12 +18,13 @@
 #' 
 #' @references
 #'
-#'   Newcombe, R. G. (1998). Two‐sided confidence intervals for the single
-#'       proportion: comparison of seven methods. Statistics in medicine, 17(8),
-#'       857-872.
+#'   Newcombe, R. G. (1998). Two‐sided confidence intervals for the
+#'       single proportion: comparison of seven methods. Statistics in
+#'       medicine, 17(8), 857-872.
 #'
-#'   Wilson, E. B. (1927). Probable inference, the law of succession, and statistical
-#'       inference. Journal of the American Statistical Association, 22(158), 209-212.
+#'   Wilson, E. B. (1927). Probable inference, the law of succession,
+#'       and statistical inference. Journal of the American Statistical
+#'       Association, 22(158), 209-212.
 #'
 #' @examples
 #' # Examples from Newcombe (1998):
