@@ -4,21 +4,21 @@
 #'
 #' Computes the confidence interval for a proportion arising from
 #' clustered data. That is, individual responses are nested within a
-#' clusters; for example disease prevalence may be estimated on the
-#' basis of responses given from different communities. The clustering
-#' of responses is taken into account in the estimation of the standard
-#' error of the proportion using the method described in Bennet et
-#' al. (1991).
+#' cluster; for example disease prevalence may be estimated on the basis
+#' of responses given from individuals in different communities. The
+#' clustering of responses is taken into account in the estimation of
+#' the standard error of the proportion using the method described in
+#' Bennet et al. (1991).
 #'
 #' @param ci The confidence level - pass as a natural number (e.g. 95
 #'     for the 95\% confidence interval)
-#' @param positives A vector describing the number "successes" (response
-#'     = 1) coming from each cluster.
-#' @param N A vector describing the total number responses coming from
-#'     each cluster.
+#' @param successes A vector describing the number of "successes" (i.e.,
+#'     response = 1) in each cluster.
+#' @param N A vector describing the total number of responses in each
+#'     cluster.
 #'
 #' @return A \code{list} containing the confidence interval boudaries.
-#'   \item{p}{The proportion across all clusters}
+#'   \item{p}{The estimated proportion of "success" across all clusters}
 #'   \item{l}{The lower bound of the confidence interval of p}
 #'   \item{u}{The upper bound of the confidence interval of p}
 #'   \item{se.cluster}{The estimated standard error of the proportion}
@@ -34,7 +34,7 @@
 #' @examples
 #'
 #' # Example from Bennet et al. (1991)
-#' ci.one.prop.cluster(95, positives = c(2, 5, 3, 3, 1, 0), N = c(2, 7, 4, 6, 4, 3))
+#' ci.one.prop.cluster(95, successes = c(2, 5, 3, 3, 1, 0), N = c(2, 7, 4, 6, 4, 3))
 #' 
 #' 
 #' @author Martin Papenberg \email{martin.papenberg@@hhu.de}
@@ -42,17 +42,17 @@
 #' @export
 #' 
 
-ci.one.prop.cluster <- function(ci, positives, N) {
+ci.one.prop.cluster <- function(ci, successes, N) {
     
-    if (length(positives) != length(N)) {
-        stop("'positives' and 'N' indicate different number of clusters") 
+    if (length(successes) != length(N)) {
+        stop("'successes' and 'N' indicate different number of clusters") 
     }
 
-    c <- length(positives)
-    p <- sum(positives) / sum(N)
+    c <- length(successes)
+    p <- sum(successes) / sum(N)
 
     # compute confidence interval
-    se.cluster <- se.cluster(positives, N, c, p)
+    se.cluster <- se.cluster(successes, N, c, p)
     z <- get.z.score(ci)
     lower <- p - z*se.cluster
     upper <- p + z*se.cluster
@@ -80,7 +80,7 @@ se.simple <- function(p, N) {
 }
 
 intraclass.from.design <- function(design.effect, N) {
-    ## b = average number of individuals per cluster
+    # b = average number of individuals per cluster
     b <- sum(N) / length(N)
     return((design.effect-1)/(b-1))
 }
