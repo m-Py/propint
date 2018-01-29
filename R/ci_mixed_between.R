@@ -1,4 +1,45 @@
+
+#' Compute the a confidence interval for the difference between two
+#' proportions based on clustered data
 #'
+#' This function computes the same confidence interval as
+#' `ci.mixed.between` but uses different input parameters.
+#'
+#' @param ci The confidence level - pass as a natural number (e.g. 95
+#'     for the 95\% confidence interval).
+#' @param successes1 A numeric vector indicating the number of
+#'     "successes" per cluster in condition 1
+#' @param successes2 A numeric vector indicating the number of
+#'     "successes" per cluster in condition 2
+#' @param N1 A numeric vector indicating the number of observations per
+#'     cluster in condition 1
+#' @param N2 A numeric vector indicating the number of observations per
+#'     cluster in condition 2
+#' 
+#' @references
+#' 
+#' Donner, A., & Klar, N. (1993). Confidence interval construction for
+#'   effect measures arising from cluster randomization
+#'   trials. Journal of clinical epidemiology, 46(2), 123-131.
+#'
+#' @author Martin Papenberg \email{martin.papenberg@@hhu.de}
+#'
+#' @export
+#'  
+
+ci.two.clustered.props <- function(ci, successes1, successes2, N1, N2) {
+
+    vector1 <- lapply(successes1, function(x) rep(1, x))
+    vector2 <- lapply(successes2, function(x) rep(1, x))
+    trials1 <- lapply(N1, function(x) rep(0, x))
+    trials2 <- lapply(N2, function(x) rep(0, x))
+
+    trials1 <- add_lists(vector1, trials1)
+    trials2 <- add_lists(vector2, trials2)
+
+    return(ci.two.clustered.props.internal(ci, trials1, trials2))
+}
+
 #' Confidence interval for the "main effect" of a between-subjects
 #' factor in mixed 2 x 2 design with a dichotomous outcome
 #'
@@ -49,11 +90,16 @@ ci.mixed.between <- function(ci, group1.measure1, group1.measure2,
                                           group2.measure1,
                                           group2.measure2)
     
-    return(ci.mixed.between.internal(ci, cluster.lists[[1]], cluster.lists[[2]]))
+    return(ci.two.clustered.props.internal(ci, cluster.lists[[1]], cluster.lists[[2]]))
 }
 
-# this actually does the work
-ci.mixed.between.internal <- function(ci, cluster.list1, cluster.list2) {
+## This function actually does the work. The parameter cluster.list is a
+## list of vectors where each vector represents a cluster. Each vector
+## is a sequence of 1s and 0s representing "successes" and the opposite
+## respectively. The functions `ci.mixed.between` and
+## `ci.two.clustered.props` only create these lists and then call this
+## internal function.
+ci.two.clustered.props.internal <- function(ci, cluster.list1, cluster.list2) {
 
     # total "n" by condition (total units across all clusters)
     N1 <- length(unlist(cluster.list1))
@@ -80,25 +126,9 @@ ci.mixed.between.internal <- function(ci, cluster.list1, cluster.list2) {
                 intraclass.cor=intraclass.cor))
 }
 
-# from API to internal representation of data (as list of clusters)
-create.cluster.lists <- function(group1.measure1, group1.measure2,
-                                 group2.measure1, group2.measure2) {
 
-    group1 <- cbind(group1.measure1, group1.measure2)
-    group2 <- cbind(group2.measure1, group2.measure2)
-
-    list1 <- list()
-    list2 <- list()
-    
-    for (i in 1:nrow(group1)) {
-        list1[[i]] <- group1[i,]
-    }
-    for (i in 1:nrow(group2)) {
-        list2[[i]] <- group2[i,]
-    }
-
-    return(list(list1, list2))
-}
+## computations of intermediate results such as intraclass correlations
+## and mean squares:
 
 intraclass <- function(cluster.list1, cluster.list2) {
     MSC <- mean.sq.clusters(cluster.list1, cluster.list2)
@@ -140,15 +170,16 @@ correction.intraclass <- function(cluster.list1, cluster.list2) {
     return( (N - summand) / ((length(cluster.list1)-1) + (length(cluster.list1)-1)) )
 }
 
-list.to.data.frame <- function(list) {
-    clusters <- length(list)
-    sizes <- cluster.sizes(list)
-    cluster.vector <- vector()
-    for (i in 1:clusters) {
-        cluster.vector <- c(cluster.vector, rep(i, sizes[i]))
-    }
-    return(data.frame(cluster=as.factor(cluster.vector),
-                      outcome = unlist(list)))
+#' @importFrom stats anova
+mean.squared <- function(cluster.list1, cluster.list2, id) {
+    models <- aov.cluster(cluster.list1, cluster.list2)
+    m1     <- anova(models[[1]])
+    m2     <- anova(models[[2]])
+    SC1    <- m1[id, "Sum Sq"]
+    SC2    <- m2[id, "Sum Sq"]
+    DF1    <- m1[id, "Df"]
+    DF2    <- m2[id, "Df"]
+    return( (SC1 + SC2)/(DF1 + DF2) )
 }
 
 #' @importFrom stats aov
@@ -160,14 +191,48 @@ aov.cluster <- function(cluster.list1, cluster.list2) {
     return(list(model1, model2))
 }
 
-#' @importFrom stats anova
-mean.squared <- function(cluster.list1, cluster.list2, id) {
-    models <- aov.cluster(cluster.list1, cluster.list2)
-    m1     <- anova(models[[1]])
-    m2     <- anova(models[[2]])
-    SC1    <- m1[id, "Sum Sq"]
-    SC2    <- m2[id, "Sum Sq"]
-    DF1    <- m1[id, "Df"]
-    DF2    <- m2[id, "Df"]
-    return( (SC1 + SC2)/(DF1 + DF2) )
+#############################################
+## Some functions for data transformations ##
+
+create.cluster.lists <- function(group1.measure1, group1.measure2,
+                                 group2.measure1, group2.measure2) {
+
+    group1 <- cbind(group1.measure1, group1.measure2)
+    group2 <- cbind(group2.measure1, group2.measure2)
+
+    list1 <- list()
+    list2 <- list()
+    
+    for (i in 1:nrow(group1)) {
+        list1[[i]] <- group1[i,]
+    }
+    for (i in 1:nrow(group2)) {
+        list2[[i]] <- group2[i,]
+    }
+
+    return(list(list1, list2))
+}
+
+list.to.data.frame <- function(list) {
+    clusters <- length(list)
+    sizes <- cluster.sizes(list)
+    cluster.vector <- vector()
+    for (i in 1:clusters) {
+        cluster.vector <- c(cluster.vector, rep(i, sizes[i]))
+    }
+    return(data.frame(cluster=as.factor(cluster.vector),
+                      outcome = unlist(list)))
+}
+
+## elements in list2 must have more elements (or as many) than vectors
+## in list1
+add_lists <- function(list1, list2) {
+    outcome <- list()
+    for (i in 1:length(list1)) {
+        outcome[[i]] <- list2[[i]]
+        ## in case no positive existed:
+        if (length(list1[[i]]) > 0)
+            outcome[[i]][1:length(list1[[i]])] <- list1[[i]]
+    }
+    return(outcome)
 }
