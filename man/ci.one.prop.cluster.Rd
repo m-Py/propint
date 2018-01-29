@@ -5,21 +5,21 @@
 \title{Confidence interval for a single proportion estimated from a
 clustered sample}
 \usage{
-ci.one.prop.cluster(ci, positives, N)
+ci.one.prop.cluster(ci, successes, N)
 }
 \arguments{
 \item{ci}{The confidence level - pass as a natural number (e.g. 95
 for the 95\% confidence interval)}
 
-\item{positives}{A vector describing the number "successes" (response
-= 1) coming from each cluster.}
+\item{successes}{A vector describing the number of "successes" (i.e.,
+response = 1) in each cluster.}
 
-\item{N}{A vector describing the total number responses coming from
-each cluster.}
+\item{N}{A vector describing the total number of responses in each
+cluster.}
 }
 \value{
 A \code{list} containing the confidence interval boudaries.
-  \item{p}{The proportion across all clusters}
+  \item{p}{The estimated proportion of "success" across all clusters}
   \item{l}{The lower bound of the confidence interval of p}
   \item{u}{The upper bound of the confidence interval of p}
   \item{se.cluster}{The estimated standard error of the proportion}
@@ -29,16 +29,16 @@ A \code{list} containing the confidence interval boudaries.
 \description{
 Computes the confidence interval for a proportion arising from
 clustered data. That is, individual responses are nested within a
-clusters; for example disease prevalence may be estimated on the
-basis of responses given from different communities. The clustering
-of responses is taken into account in the estimation of the standard
-error of the proportion using the method described in Bennet et
-al. (1991).
+cluster; for example disease prevalence may be estimated on the basis
+of responses given from individuals in different communities. The
+clustering of responses is taken into account in the estimation of
+the standard error of the proportion using the method described in
+Bennet et al. (1991).
 }
 \examples{
 
 # Example from Bennet et al. (1991)
-ci.one.prop.cluster(95, positives = c(2, 5, 3, 3, 1, 0), N = c(2, 7, 4, 6, 4, 3))
+ci.one.prop.cluster(95, successes = c(2, 5, 3, 3, 1, 0), N = c(2, 7, 4, 6, 4, 3))
 
 
 }

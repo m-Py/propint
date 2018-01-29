@@ -11,6 +11,6 @@ Encoding: UTF-8
 LazyLoad: yes
 URL: https://github.com/m-Py/propint
 Suggests: testthat
-Version: 0.2.12
-Date: 2017-10-18
+Version: 0.2.13
+Date: 2018-01-29
 RoxygenNote: 6.0.1

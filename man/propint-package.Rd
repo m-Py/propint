@@ -11,8 +11,8 @@ Testing for interactions in proportions.
 \tabular{ll}{
 Package: \tab propint\cr
 Type: \tab Package\cr
-Version: \tab 0.2.12\cr
-Date: \tab 2017-10-18\cr
+Version: \tab 0.2.13\cr
+Date: \tab 2018-01-29\cr
 Depends: \tab R (>= 2.10.0)\cr
 Encoding: \tab UTF-8\cr
 License: \tab GPL-3 + file LICENSE\cr
