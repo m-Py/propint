@@ -35,6 +35,11 @@ clustering of responses is taken into account in the estimation of
 the standard error of the proportion using the method described in
 Bennet et al. (1991).
 }
+\details{
+When the intraclass correlation is estimated to be lower
+    than 0, the value is set to 0 as intraclass correlations of less
+    than zero are generally implausible (Donner & Klar, 1993)
+}
 \examples{
 
 # Example from Bennet et al. (1991)
@@ -46,6 +51,10 @@ ci.one.prop.cluster(95, successes = c(2, 5, 3, 3, 1, 0), N = c(2, 7, 4, 6, 4, 3)
 Bennett, S., Woods, T., Liyanage, W. M., Smith, D. L. (1991). A
     simplified general method for cluster-sample surveys of health in
     developing countries. World Health Stat Quarterly, 44(3), 98-106.
+
+Donner, A., & Klar, N. (1993). Confidence interval construction for
+  effect measures arising from cluster randomization trials. Journal
+  of clinical epidemiology, 46(2), 123-131.
 }
 \author{
 Martin Papenberg \email{martin.papenberg@hhu.de}

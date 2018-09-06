@@ -24,6 +24,10 @@
 #'   \item{se.cluster}{The estimated standard error of the proportion}
 #'   \item{design.effect}{The design effect}
 #'   \item{intraclass.cor}{The intraclass correlation}
+#'
+#' @details When the intraclass correlation is estimated to be lower
+#'     than 0, the value is set to 0 as intraclass correlations of less
+#'     than zero are generally implausible (Donner & Klar, 1993)
 #' 
 #' @references
 #'
@@ -31,6 +35,10 @@
 #'     simplified general method for cluster-sample surveys of health in
 #'     developing countries. World Health Stat Quarterly, 44(3), 98-106.
 #'
+#' Donner, A., & Klar, N. (1993). Confidence interval construction for
+#'   effect measures arising from cluster randomization trials. Journal
+#'   of clinical epidemiology, 46(2), 123-131.
+#' 
 #' @examples
 #'
 #' # Example from Bennet et al. (1991)
@@ -82,5 +90,7 @@ se.simple <- function(p, N) {
 intraclass.from.design <- function(design.effect, N) {
     # b = average number of individuals per cluster
     b <- sum(N) / length(N)
-    return((design.effect-1)/(b-1))
+    roh <- (design.effect - 1) / (b - 1)
+    if (roh < 0) roh <- 0 # recommended since values < 0 are implausible
+    return(roh)
 }

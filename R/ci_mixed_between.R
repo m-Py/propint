@@ -133,7 +133,7 @@ ci.two.clustered.props.internal <- function(ci, cluster.list1, cluster.list2) {
 intraclass <- function(cluster.list1, cluster.list2) {
     MSC <- mean.sq.clusters(cluster.list1, cluster.list2)
     MSE <- mean.sq.error(cluster.list1, cluster.list2)
-    if (MSC < MSE) return(0)
+    if (MSC < MSE) return(0) # values < 0 are implausible
     Na  <- correction.intraclass(cluster.list1, cluster.list2)
     return( (MSC - MSE) / ( MSC + (Na - 1) * MSE) )
 }
