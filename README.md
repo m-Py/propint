@@ -1,20 +1,22 @@
 # propint
 
-`propint` is an R package that computes confidence intervals to test for 
-interactions of independent or dependent proportions. It tests whether 
-the difference between one pair of proportions is larger than the 
-difference between a different pair of proportions. This method closely 
-corresponds to a 2 x 2 ANOVA and was developed by Newcombe (2001).
+`propint` is an R package that includes several functions to compute
+confidence intervals for the estimation of proportions based on
+dichotomous data; each observation is a 1 or a 0 depending on whether a
+feature is present or absent. `propint` enables you to:
 
-`propint` can also be used to compute confidence intervals for simple 
-pairs of (independent or dependent) proportions, and even to compute 
-confidence intervals for higher order interaction (for example 
-corresponding to a 2 x 2 x 2 ANOVA). All functions rely on confidence 
-intervals of single proportions that are converted into "higher-order" 
-confidence intervals using recommendations and developments by Newcombe 
-(1998a, 1998b, 2001). Confidence intervals for single proportions are 
-computed based on »Wilson's score« (1927) as recommended in Newcombe 
-(Method 3, 1998c). 
+1. Compute confidence intervals for simple proportions like the
+   prevalence of a disease. Functionality is included to estimate the confidence
+   interval for independent data points, or from clustered data; e.g. if
+   the data was collected in different cities that may differ in the
+   average prevalence of a disease.
+2. Compute confidence intervals for the difference between proportions,
+   e.g. to compare the efficacy of a treatment and a placebo when the
+   outcome was measured as a dichotomous feature. 
+3. Compute a confidence interval for the difference between two
+   differences of proportions, that is, to test for the presence of an
+   interaction between proportions (e.g. to test whether a treatment
+   efficacy in comparison to a placebo differed between two hospitals).
 
 ## Installation
 
@@ -26,14 +28,96 @@ install_github("m-Py/propint")
 library("propint")
 ```
 
+## Confidence intervals for a simple proportion
+
+A simple proportion can be estimated either or the basis of independent
+observations, or by taking into account dependency that might be known
+to the researcher. 
+
+### Independent observations
+
+Confidence intervals for single proportions are computed based on
+»Wilson's score« (1927) as recommended in Newcombe (Method 3, 1998c). 
+
+### Clustered observations
+
+Controlling for existing dependency in observations is crucial when
+applying methods of statistical inference. The prevalence of a disease
+may be estimated on observations in different cities that differ in
+their average prevalence; hence observations from cities are not
+statistically independent, and this clustering should be considered when
+computing a confidence interval. `propint` implements a straightforward
+method to control for clustering described by Bennet, Woods Iiyanage and
+Smith (1991). Its usage is as follows: 
+
+```R
+
+## Compute 95% confidence interval based on clustered data:
+ci.one.prop.cluster(95, c(23, 19, 44, 9), c(30, 25, 77, 12))
+
+$p
+[1] 0.6597222
+
+$l
+[1] 0.5340171
+
+$u
+[1] 0.7854273
+
+$se.cluster
+[1] 0.06413645
+
+$design.effect
+[1] 2.638624
+
+$intraclass.cor
+[1] 0.04681784
+
+```
+
+We also get some additional information like the design effect and the
+intraclass correlation coefficient.
+
+We can compare the results to the confidence interval for independent
+observations. The point estimate of course is the same, but the width of
+the interval differs. The confidence interval will generally be larger
+when clustering is accounted for; when clustering is ignored we will
+have undue confidence in the precision of our estimate (note that some
+persons do not think that confidence in confidence intervals is
+appropriate; but for the sake of simplicity I will use such language).
+
+```R
+## Compare to unclustered CI:
+ci.one.prop(95, sum(c(23, 19, 44, 9)), sum(c(30, 25, 77, 12)))
+
+$p
+[1] 0.6597222
+
+$l
+[1] 0.5790851
+
+$u
+[1] 0.732059
+
+```
+
+propint can be used to compute confidence intervals for simple pairs of
+(independent or dependent) proportions, and even to compute confidence
+intervals for higher order interaction (for example corresponding to a 2
+x 2 x 2 ANOVA). All functions rely on confidence intervals of single
+proportions that are converted into "higher-order" confidence intervals
+using recommendations and developments by Newcombe (1998a, 1998b,
+2001). Confidence intervals for single proportions are computed based on
+»Wilson's score« (1927) as recommended in Newcombe (Method 3, 1998c).
+
 ## Interaction of independent proportions
 
-The function `ci.indep.interaction()` computes the confidence interval 
-for an interaction of independent proportions. Specifically, a 
-confidence interval is computed for the differences of the difference of 
-two pairs proportions is compared, i.e. the contrast (p1 - p2) - (p3 - 
-p4). If the confidence interval of this difference of differences does
-not cover zero, we would assume an interaction.
+The function `ci.indep.interaction()` computes the confidence interval
+for an interaction of independent proportions. Specifically, a
+confidence interval is computed for the differences of the difference of
+two pairs proportions: (p1 - p2) - (p3 - p4). If the confidence interval
+of this difference of differences does not cover zero, we assume there
+is an interaction.
 
 `ci.indep.interaction()` can be used in two different ways:
 
