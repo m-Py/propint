@@ -8,7 +8,7 @@
 #' of responses given from individuals in different communities. The
 #' clustering of responses is taken into account in the estimation of
 #' the standard error of the proportion using the method described in
-#' Bennet et al. (1991).
+#' Bennett et al. (1991).
 #'
 #' @param ci The confidence level - pass as a natural number (e.g. 95
 #'     for the 95\% confidence interval)
@@ -41,7 +41,7 @@
 #' 
 #' @examples
 #'
-#' # Example from Bennet et al. (1991)
+#' # Example from Bennett et al. (1991)
 #' ci.one.prop.cluster(95, successes = c(2, 5, 3, 3, 1, 0), N = c(2, 7, 4, 6, 4, 3))
 #' 
 #' 
